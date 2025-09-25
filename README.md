@@ -1,13 +1,14 @@
 # tia-lu-food-app-dados-bahia
 
-🍔 Sistema de Gerenciamento de Pedidos
+#🍔 Sistema de Gerenciamento de Pedidos
+---
 👥 Equipe
 Membro 1: Aloisio Caldas da Silva Junior
 Membro 2: Eduardo Sousa da Silva
 Membro 3: Eveny Castro de Almeida
 Membro 4: Iran Pablo Santos Martins
 Membro 5: Thiago Sanches Hohlenwerger
-
+---
 📖 Descrição
 Este projeto é um sistema de gerenciamento de pedidos desenvolvido em Python.
 O objetivo é simular o funcionamento básico de um restaurante utilizando estruturas de dados nativas para representar filas de pedidos e operações de gerenciamento de itens e pedidos.
