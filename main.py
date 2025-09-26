@@ -1,21 +1,13 @@
-# Sistema de Pedidos de Restaurante
-# Regras do professor: sem funções, sem classes, sem dicionários, sem imports.
-
-# Estruturas de dados
-# Cada item do cardápio será uma lista: [codigo, nome, descricao, preco, estoque]
 menu = []
-# Cada pedido será uma lista: [codigo_pedido, nome_cliente, itens, valor_total, status]
 pedidos = []
-# Filas
 fila_pendentes = []
 fila_aceitos = []
 fila_prontos = []
 
-# Variáveis de controle
 proximo_codigo_item = 1
 proximo_codigo_pedido = 1
 
-# Loop principal
+
 while True:
     print("\n===== SISTEMA DE RESTAURANTE =====")
     print("1 - Cadastrar Item no Cardápio")
@@ -29,7 +21,6 @@ while True:
     print("0 - Sair")
     opcao = input("Escolha uma opção: ")
 
-    # ----------------- CADASTRAR ITEM -----------------
     if opcao == "1":
         nome = input("Nome do item: ")
         descricao = input("Descrição: ")
@@ -40,7 +31,6 @@ while True:
         print("Item cadastrado com sucesso! Código:", proximo_codigo_item)
         proximo_codigo_item += 1
 
-    # ----------------- ATUALIZAR ITEM -----------------
     elif opcao == "2":
         codigo = int(input("Código do item a atualizar: "))
         encontrado = False
@@ -56,7 +46,6 @@ while True:
         if not encontrado:
             print("Item não encontrado.")
 
-    # ----------------- CONSULTAR ITENS -----------------
     elif opcao == "3":
         if len(menu) == 0:
             print("Nenhum item cadastrado.")
@@ -65,7 +54,6 @@ while True:
             for item in menu:
                 print("Código:", item[0], "| Nome:", item[1], "| Preço:", item[3], "| Estoque:", item[4])
 
-    # ----------------- CRIAR PEDIDO -----------------
     elif opcao == "4":
         if len(menu) == 0:
             print("Nenhum item no cardápio.")
@@ -99,7 +87,6 @@ while True:
                 print("Pedido criado com sucesso! Código:", proximo_codigo_pedido)
                 proximo_codigo_pedido += 1
 
-    # ----------------- PROCESSAR PENDENTES -----------------
     elif opcao == "5":
         if len(fila_pendentes) == 0:
             print("Nenhum pedido pendente.")
@@ -116,7 +103,6 @@ while True:
                 pedido[4] = "REJEITADO"
                 print("Pedido rejeitado.")
 
-    # ----------------- ATUALIZAR STATUS -----------------
     elif opcao == "6":
         codigo = int(input("Código do pedido: "))
         encontrado = False
@@ -132,7 +118,6 @@ while True:
         if not encontrado:
             print("Pedido não encontrado.")
 
-    # ----------------- CANCELAR PEDIDO -----------------
     elif opcao == "7":
         codigo = int(input("Código do pedido: "))
         for pedido in pedidos:
@@ -146,7 +131,6 @@ while True:
         else:
             print("Pedido não encontrado.")
 
-    # ----------------- RELATÓRIOS -----------------
     elif opcao == "8":
         print("\n--- RELATÓRIOS ---")
         print("Pedidos cadastrados:", len(pedidos))
@@ -159,7 +143,6 @@ while True:
                 total_vendas += pedido[3]
         print("Total em vendas entregues: R$", total_vendas)
 
-    # ----------------- SAIR -----------------
     elif opcao == "0":
         print("Saindo do sistema...")
         break
